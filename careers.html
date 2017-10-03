@@ -590,8 +590,8 @@
 <script src="/js/plugin/tether.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/jquery-1.11.2.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/plugin/jquery.easing.js?v=20170822" type="text/javascript"></script>
-<!-- Commented jquery UI as it was conflicting with bootstrap ui -->
-<!--<script src="/js/jquery-ui.min.js?v=20170822" type="text/javascript"></script>-->
+
+<script src="/js/jquery-ui.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/bootstrap.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/plugin/jquery.flexslider.js?v=20170822" type="text/javascript"></script>
 <script src="/js/plugin/jquery.fitvids.js?v=20170822" type="text/javascript"></script>
@@ -660,7 +660,8 @@
 <script>
     loadPlugins();
     setTabNavLinkBehavior();
-    onYouTubeIframeAPIReady();
+    // commented below function call, it was required in Angular because object reference was lost
+    //onYouTubeIframeAPIReady();
     // call Career Constructor
     careersConstructor();
     updateTitle("careers");

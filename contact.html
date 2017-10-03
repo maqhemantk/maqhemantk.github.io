@@ -313,8 +313,8 @@
 <script src="/js/plugin/tether.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/jquery-1.11.2.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/plugin/jquery.easing.js?v=20170822" type="text/javascript"></script>
-<!-- Commented jquery UI as it was conflicting with bootstrap ui -->
-<!--<script src="/js/jquery-ui.min.js?v=20170822" type="text/javascript"></script>-->
+
+<script src="/js/jquery-ui.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/bootstrap.min.js?v=20170822" type="text/javascript"></script>
 <script src="/js/plugin/jquery.flexslider.js?v=20170822" type="text/javascript"></script>
 <script src="/js/plugin/jquery.fitvids.js?v=20170822" type="text/javascript"></script>
@@ -384,4 +384,9 @@
     loadPlugins();
     contactConstructor();
     updateTitle("contact");
+
+    // load script dynamically using any method
+    var googlemaps = document.createElement('script');
+    googlemaps.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?v=3&sensor=true&key=AIzaSyBHkJlVTrAkgcD9jJxo_CyHx0YZZtX65iY&callback=initMap');
+    document.head.appendChild(googlemaps);
 </script>
