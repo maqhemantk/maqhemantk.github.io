@@ -8,7 +8,7 @@
 function getParameterByName(name) {
     "use strict";
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    var regex = new RegExp("[\\?&]" + name + "=([^&]*)"),
         results = regex.exec(decodeURIComponent(location.href));
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
