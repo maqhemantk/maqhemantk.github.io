@@ -127,7 +127,7 @@ function renderNews() {
 
                 if (typeof imgs !== "undefined" && imgs.length > 0) {
                     img = imgs[0];
-                    src =sNewsImageInLinkSrc= img.src;
+                    src = sNewsImageInLinkSrc = img.src;
                     img.parentNode.removeChild(img);
                 } else {
                     sNewsImageInLinkSrc = document.querySelector("meta[property='og:image']").getAttribute("content");;
@@ -137,7 +137,6 @@ function renderNews() {
                 var sContent = oNewsPager.template.replace("@title", sTitle)
                                     .replace("@date", oDate)
                                     .replace("@content", sContent)
-                                    .replace("@newsimagesrc", src)
                                     .replace("@fbunewslink", window.location.origin + "/news?article=" + sRawTitle)
                                     .replace("@newslink", window.location.origin + "/news?article=" + sRawTitle)
                                     .replace("@twitternewslink", encodeURI(window.location.origin + "/news?article=" + sRawTitle))
@@ -152,6 +151,17 @@ function renderNews() {
                                     .replace("@lntitle", sRawTitle)
                                     .replace("@lnsource", "MAQ Software")
                                     .replace("@tooltip", getFirstNWordsWithEllipses(sTitle, 4));
+
+                $("#bloggerContent").html(sContent);
+                if (src) {
+                    sContent = sContent.replace("@newsimagesrc", src);
+                } else {
+                    bloggerContent = document.getElementById("bloggerContent");
+                    imgs = bloggerContent.getElementsByTagName('img');
+                    img = imgs[0];
+                    img.parentNode.removeChild(img);
+                    sContent = $("#bloggerContent").html();
+                }
                 oNewsContainer.append(sContent);
 
             }
