@@ -144,7 +144,7 @@ function renderNews() {
                                     .replace("@fbsharelink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
                                     .replace("@fbsharetitle", encodeURIComponent(sRawTitle))
                                     .replace("@fbsharedesc", encodeURIComponent(sRawTitle))
-                                    .replace("@fbshareimage", encodeURIComponent(src))
+                                    .replace("@fbshareimage", src)
                                     .replace("@linktitle", sRawTitle.substr(0, 200))
                                     .replace("@lnsummary", sRawTitle.substr(0, 256))
                                     .replace("@lntitle", sRawTitle)
