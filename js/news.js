@@ -54,9 +54,9 @@ function facebookShare(sURL, sTitle, sDescription, sImageURL) {
             function (response) {
                 if (response && !response.error_message) {
                     // then get post content
-                    alert('successfully posted. Status id : ' + response.post_id);
+                    console.log('successfully posted. Status id : ' + response.post_id);
                 } else {
-                    alert('Something went error.');
+                    console.log('Something went error.');
                 }
             });
 }
