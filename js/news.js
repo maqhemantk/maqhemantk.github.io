@@ -130,6 +130,7 @@ function renderNews() {
                     src = sNewsImageInLinkSrc = img.src;
                     img.parentNode.removeChild(img);
                 } else {
+                    debugger;
                     sNewsImageInLinkSrc = document.querySelector("meta[property='og:image']").getAttribute("content");;
                 }
                 sContent = $("#bloggerContent").html();
