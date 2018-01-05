@@ -1,28 +1,54 @@
 /*jslint plusplus: true */
 
 "use strict";
+var fbShareIcon = '<div>' +
+        '<button class="inlineBlock _2tga _49ve">' +
+            '<div class="">' +
+                '<span class="_3jn- inlineBlock">' +
+                    '<span class="_3jn_"></span><span class="_49vg">' +
+                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="_1pbq" color="#ffffff">' +
+                            '<path fill="#ffffff" fill-rule="evenodd" d="M8 14H3.667C2.733 13.9 2 13.167 2 12.233V3.667A1.65 1.65 0 0 1 3.667 2h8.666A1.65 1.65 0 0 1 14 3.667v8.566c0 .934-.733 1.667-1.667 1.767H10v-3.967h1.3l.7-2.066h-2V6.933c0-.466.167-.9.867-.9H12v-1.8c.033 0-.933-.266-1.533-.266-1.267 0-2.434.7-2.467 2.133v1.867H6v2.066h2V14z"></path>' +
+                        '</svg><img class="_1pbs inlineBlock img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uPlIYLfynqH.png" alt="" width="16" height="16">' +
+                    '</span>' +
+                '</span><span class="_49vh _2pi7">Share</span>' +
+            '</div>' +
+        '</button>' +
+    '</div>';
+var lnShareIcon = '<span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;">' +
+	'<span class="li_ui_li_gen_1515155391781_0">' +
+		'<span class="li_ui_li_gen_1515155391781_0-link">'+
+            '<span class="li_ui_li_gen_1515155391781_0-logo">in</span>' +
+                '<span class="li_ui_li_gen_1515155391781_0-title">' +
+                '<span class="li_ui_li_gen_1515155391781_0-mark">' +
+                '</span>' +
+            '<span class="li_ui_li_gen_1515155391781_0-title-text">Share</span>' +
+        '</span>' +
+       '</span>' +
+    '</span>' +
+'</span>';
 var oNewsPager = {
-    template: '<div>'+
-                '<div class="post-meta">'+
-                        '<span>@date</span>'+
-                 '</div>'+
+    template: '<div>' +
+                '<div class="post-meta">' +
+                        '<span>@date</span>' +
+                 '</div>' +
                  '<div class="post-header">' +
-                    '<h2>@title</h2>'+
+                    '<h2>@title</h2>' +
                     '<div class="social-media-share">' +
                         //'<div class="fb-share-button share-button" data-href="@newslink" data-summary="summary" data-description="description" data-desc="desc" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@fbunewslink&amp;src=sdkpreparse&amp;t=thisisdynamictitle">Share</a></div>' +
-                        '<div class="share-button"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="@twitternewslink" class="twitter-share-button share-button" data-text="@linktitle" data-show-count="false">Tweet</a></div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' +
+                        '<div class="share-button pull-left"><span onClick=facebookShare("@fbsharelink","@fbsharetitle","@fbsharedesc","@fbshareimage")>' + fbShareIcon + '</span></div>' +
+                        //'<div class="share-button pull-left"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="@twitternewslink" class="twitter-share-button share-button" data-text="@linktitle" data-show-count="false">Tweet</a></div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' +
                         //'<span class="linkedin-share-button share-button">' +
                         //    '<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>' +
                         //    '<script type="IN/Share" data-title="data-title" data-url="@linkedinnewslink" data-counter="right"></script>' +
                         //'</span>' +
-                        '<div class="share-button"><a href="http://www.linkedin.com/shareArticle?mini=true&summary=@lnsummary&url=@lnurl&title=@lntitle&source=@lnsource" rel="nofollow">Share on LinkedIn</a></div>' +
-                        '<div class="share-button"><span onClick=facebookShare("@fbsharelink","@fbsharetitle","@fbsharedesc","@fbshareimage")>Share on Facebook</span><div>' +
+                        '<div class="share-button"><a href="http://www.linkedin.com/shareArticle?mini=true&summary=@lnsummary&url=@lnurl&title=@lntitle&source=@lnsource" rel="nofollow">' + lnShareIcon + '</a></div>' +
+                        '<br />' +
                     '</div>' +
-                 '</div>'+
-                 '<div class="post-media">'+
-                    '<img alt="News" title="@tooltip" src="@newsimagesrc">'+
-                 '</div>'+
-                 '<div class="post-entry">@content</div>'+
+                 '</div>' +
+                 '<div class="post-media">' +
+                    '<img alt="News" title="@tooltip" src="@newsimagesrc">' +
+                 '</div>' +
+                 '<div class="post-entry">@content</div>' +
               '</div>',
     pageIndex: 0,
     pagesize: 6
