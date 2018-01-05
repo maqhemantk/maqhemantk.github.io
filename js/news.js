@@ -136,6 +136,7 @@ function renderNews() {
 
                 var sContent = oNewsPager.template.replace("@title", sTitle)
                                     .replace("@date", oDate)
+                                    .replace("@newsimagesrc", src)
                                     .replace("@content", sContent)
                                     .replace("@fbunewslink", window.location.origin + "/news?article=" + sRawTitle)
                                     .replace("@newslink", window.location.origin + "/news?article=" + sRawTitle)
@@ -152,16 +153,17 @@ function renderNews() {
                                     .replace("@lnsource", "MAQ Software")
                                     .replace("@tooltip", getFirstNWordsWithEllipses(sTitle, 4));
 
-                $("#bloggerContent").html(sContent);
-                if (src) {
-                    sContent = sContent.replace("@newsimagesrc", src);
-                } else {
-                    bloggerContent = document.getElementById("bloggerContent");
-                    imgs = bloggerContent.getElementsByTagName('img');
-                    img = imgs[0];
-                    img.parentNode.removeChild(img);
-                    sContent = $("#bloggerContent").html();
-                }
+                //$("#bloggerContent").html(sContent);
+                //if (src) {
+                //    sContent = sContent;
+                //} else {
+                //    debugger;
+                //    bloggerContent = document.getElementById("bloggerContent");
+                //    imgs = bloggerContent.getElementsByTagName('img');
+                //    img = imgs[0];
+                //    img.parentNode.removeChild(img);
+                //    sContent = $("#bloggerContent").html();
+                //}
                 oNewsContainer.append(sContent);
 
             }
