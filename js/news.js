@@ -46,8 +46,7 @@ function facebookShare(sURL, sTitle, sDescription, sImageURL) {
                 'og:url': sURL, // your url to share
                 'og:title': decodeURIComponent(sTitle),
                 'og:description': decodeURIComponent(sDescription),
-                'og:image': decodeURIComponent(sImageURL),
-                'og:source': 'MAQSoftware.com'
+                'og:image': decodeURIComponent(sImageURL)
             }
         })
     },
@@ -124,12 +123,14 @@ function renderNews() {
                 $("#bloggerContent").html(sContent);
                 var bloggerContent = document.getElementById("bloggerContent");
                 var imgs = bloggerContent.getElementsByTagName('img');
-                var img, src = "";
+                var img, src = "", sNewsImageInLinkSrc;
 
                 if (typeof imgs !== "undefined" && imgs.length > 0) {
                     img = imgs[0];
-                    src = img.src;
+                    src =sNewsImageInLinkSrc= img.src;
                     img.parentNode.removeChild(img);
+                } else {
+                    sNewsImageInLinkSrc = document.querySelector("meta[property='og:image']").getAttribute("content");;
                 }
                 sContent = $("#bloggerContent").html();
 
@@ -145,7 +146,7 @@ function renderNews() {
                                     .replace("@fbsharelink", encodeURI(window.location.origin + "/news?article=" + sRawTitle))
                                     .replace("@fbsharetitle", encodeURIComponent(sRawTitle))
                                     .replace("@fbsharedesc", encodeURIComponent(sRawTitle))
-                                    .replace("@fbshareimage", encodeURIComponent(src))
+                                    .replace("@fbshareimage", encodeURIComponent(sNewsImageInLinkSrc))
                                     .replace("@linktitle", sRawTitle.substr(0, 200))
                                     .replace("@lnsummary", sRawTitle.substr(0, 256))
                                     .replace("@lntitle", sRawTitle)
