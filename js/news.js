@@ -44,9 +44,9 @@ function facebookShare(sURL, sTitle, sDescription, sImageURL) {
         action_properties: JSON.stringify({
             object: {
                 'og:url': sURL, // your url to share
-                'og:title': sTitle,
-                'og:description': sDescription,
-                'og:image': sImageURL,
+                'og:title': decodeURIComponent(sTitle),
+                'og:description': decodeURIComponent(sDescription),
+                'og:image': decodeURIComponent(sImageURL),
                 'og:source': 'MAQSoftware.com'
             }
         })
@@ -145,7 +145,7 @@ function renderNews() {
                                     .replace("@fbsharelink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
                                     .replace("@fbsharetitle", encodeURIComponent(sRawTitle))
                                     .replace("@fbsharedesc", encodeURIComponent(sRawTitle))
-                                    .replace("@fbshareimage", src)
+                                    .replace("@fbshareimage", encodeURIComponent(src))
                                     .replace("@linktitle", sRawTitle.substr(0, 200))
                                     .replace("@lnsummary", sRawTitle.substr(0, 256))
                                     .replace("@lntitle", sRawTitle)
