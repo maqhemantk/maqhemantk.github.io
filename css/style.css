@@ -742,7 +742,18 @@ form label.error {
 .pb {
     padding-bottom: 110px;
 }
+.ptb-5px {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
+.pt-5px {
+    padding-top: 5px;
+}
+
+.pb-5px {
+    padding-bottom: 5px;
+}
 .ptb-10 {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1009,6 +1020,18 @@ form label.error {
 
 .mr-13 {
     margin-right: 13px !important;
+}
+.mtb-25 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
 }
 
 
@@ -1458,7 +1481,7 @@ form label.error {
 .logo {
     float: left;
     text-align: left;
-    /*display: inline-block;*/
+    display: inline-block;
 }
 
     .logo a {
@@ -1577,7 +1600,7 @@ form label.error {
 }
 
 .nav-bar-icon {
-    /*display: inline-block;*/
+    display: inline-block;
     float: right;
     position: relative;
     height: 16px;
@@ -1764,7 +1787,7 @@ header.header-prepare .nav-bar-icon > span::after {
     }
 
     .nav-bar-icon, .nav-mobile.nav-bar-icon, .header-fixed .nav-bar-icon {
-        /*display: inline-block;*/
+        display: inline-block;
         float: right;
         padding-top: 32px;
         padding-bottom: 32px;
@@ -1829,7 +1852,7 @@ header.header-prepare .nav-bar-icon > span::after {
     }
 
         .side-menu-btn ul li {
-            /*display: inline-block;*/
+            display: inline-block;
             float: left;
             position: relative;
         }
@@ -2468,7 +2491,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
 
 .skill-bar-percent {
     float: right;
-    /*display: inline-block;*/
+    display: inline-block;
 }
 
 
@@ -2722,8 +2745,8 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
         height: auto;
         max-height: 100%;
         width: auto;
-        margin-right: 15px;
-        margin-left: 15px;
+        /*margin-right: 15px;
+        margin-left: 15px;*/
     }
 
 /*-------------------------------------------------------------------------------------------*/
@@ -3595,7 +3618,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
         border: 0 none;
         color: #8d8d8d;
         cursor: pointer;
-        /*display: inline-block;*/
+        display: inline-block;
         float: right;
         font-family: "FontAwesome",sans-serif;
         margin: 0;
@@ -3791,7 +3814,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
         }
 
     .item-box:hover .item-container {
-        transform: scale(1.1);
+        transform: scale(1.0);
         transition: all 2s cubic-bezier(0.23, 1, 0.32, 1) 0s;
         width: 100%;
     }
@@ -3837,7 +3860,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
     }
 
     .item-mask .item-caption {
-        position: absolute;
+        margin:auto;
         bottom: -60px;
         left: 0px;
         padding-left: 30px;
@@ -4008,7 +4031,15 @@ ul.project-detail-block, .project-detail-block ul {
     }
 
     .blog-post .post-header h2 {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+    }
+
+    .blog-post .social-media-share {
+        margin-bottom: 10px;
+    }
+
+    .blog-post .social-media-share .share-button, .social-media-share .twitter-share-button {
+        margin-right: 5px;
     }
 
     .blog-post .post-entry {
@@ -5441,3 +5472,39 @@ ul.nav-tabs {
     #nav-menu .sub-dropdown {
         display: none;
     }
+
+
+.twitter-share-button[style] { 
+    vertical-align: bottom !important; 
+    margin-bottom:2px;
+}
+.fb-share-button { 
+    vertical-align: bottom !important; 
+    margin-bottom:2px;
+}
+.linkedin-share-button[style] {
+    vertical-align: bottom !important; 
+}
+.linkedin-share-button >span,.linkedin-share-button >span>span  {
+    vertical-align: bottom !important; 
+}
+.caseImage{
+    max-width:80%;
+    width: fit-content;
+    margin:auto;
+    margin-top:25px;
+    display:block;
+    box-shadow: 1px 1px 1px lightgray,-1px -1px 1px lightgray;
+}
+
+.figureTitle{
+    text-align:center; 
+    margin-top:10px;
+}
+
+.vTop{
+    vertical-align:top;
+}
+.item-mask>.item-caption{
+    padding-top:20%;
+}
