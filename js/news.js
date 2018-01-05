@@ -46,7 +46,8 @@ function facebookShare(sURL, sTitle, sDescription, sImageURL) {
                 'og:url': sURL, // your url to share
                 'og:title': sTitle,
                 'og:description': sDescription,
-                'og:image': sImageURL
+                'og:image': sImageURL,
+                'og:source': 'MAQSoftware.com'
             }
         })
     },
