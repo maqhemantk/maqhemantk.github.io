@@ -17,7 +17,7 @@ var oNewsPager = {
                             '<script type="IN/Share" data-title="data-title" data-url="@linkedinnewslink" data-counter="right"></script>' +
                         '</span>' +
                         '<a href="http://www.linkedin.com/shareArticle?mini=true&summary=@lnsummary&url=@lnurl&submitted-image-url=https://vijayagowrisankar.files.wordpress.com/2017/12/23.png?w=611&title=@lntitle&source=@lnsource" rel="nofollow">Share on LinkedIn</a>' +
-                        '<span onClick=facebookShare("http://stravisocapture.000webhostapp.com/fbtest.html","thisismycustomtitle","thisiscustomdescription","https://vijayagowrisankar.files.wordpress.com/2017/12/23.png?w=611")>Share on Facebook</span>' +
+                        '<span onClick=facebookShare("@fbsharelink","@fbsharetitle","@fbsharedesc","@fbshareimage")>Share on Facebook</span>' +
 
         '</div></div><div class="post-media"><img alt="News" title="@tooltip" src="@newsimagesrc"></div><div class="post-entry">@content</div></div>',
     pageIndex: 0,
@@ -141,6 +141,10 @@ function renderNews() {
                                     .replace("@twitternewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
                                     .replace("@linkedinnewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
                                     .replace("@lnurl", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
+                                    .replace("@fbsharelink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
+                                    .replace("@fbsharetitle", sRawTitle)
+                                    .replace("@fbsharedesc", sRawTitle)
+                                    .replace("@fbshareimage", src)
                                     .replace("@linktitle", sRawTitle.substr(0, 200))
                                     .replace("@lnsummary", sRawTitle.substr(0, 256))
                                     .replace("@lntitle", sRawTitle)
