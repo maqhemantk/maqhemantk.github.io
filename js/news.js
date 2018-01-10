@@ -72,7 +72,7 @@ function facebookShare(sURL, sTitle, sDescription, sImageURL) {
         method: 'share_open_graph',
         action_type: 'og.shares',
         action_properties: JSON.stringify({
-            object: {
+            link: {
                 'og:url': sURL, // your url to share
                 'og:title': decodeURIComponent(sTitle),
                 'og:description': decodeURIComponent(sDescription),
