@@ -76,7 +76,8 @@ function facebookShare(sURL, sTitle, sDescription, sImageURL) {
                 'og:url': sURL, // your url to share
                 'og:title': decodeURIComponent(sTitle),
                 'og:description': decodeURIComponent(sDescription),
-                'og:image': decodeURIComponent(sImageURL)
+                'og:image': decodeURIComponent(sImageURL),
+                'og:type': 'article'
             }
         })
     },
