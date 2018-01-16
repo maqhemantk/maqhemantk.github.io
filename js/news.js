@@ -71,6 +71,7 @@ function facebookShare(sURL, sTitle, sDescription, sImageURL) {
     FB.ui({
         method: 'share',
         action_type: 'og.shares',
+        object_types:'link',
         action_properties: JSON.stringify({
             object: {
                 'og:url': sURL, // your url to share
