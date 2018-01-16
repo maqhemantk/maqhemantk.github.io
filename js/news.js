@@ -70,7 +70,7 @@ sLoadingClass = "Loading",
 function facebookShare(sURL, sTitle, sDescription, sImageURL) {
     FB.ui({
         method: 'share',
-        action_type: 'og.news.reads',
+        action_type: 'news.reads',
         action_properties: JSON.stringify({
             object: {
                 'og:url': sURL, // your url to share
