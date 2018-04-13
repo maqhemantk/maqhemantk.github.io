@@ -66,7 +66,6 @@ function renderNewsMain() {
             $("#newstitle" + iNumber).html(title);
             $("#newsimg" + iNumber).attr('src', src);
             $(".newslink" + iNumber).attr('href', "/news?article=" + sRawTitle);
-            
         }
     }
     //$('.subData *').removeAttr('style');

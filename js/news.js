@@ -1,55 +1,27 @@
 /*jslint plusplus: true */
 
 "use strict";
-var fbShareIcon = '<div>' +
-        '<button class="inlineBlock _2tga _49ve">' +
-            '<div class="">' +
-                '<span class="_3jn- inlineBlock">' +
-                    '<span class="_3jn_"></span><span class="_49vg">' +
-                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="_1pbq" color="#ffffff">' +
-                            '<path fill="#ffffff" fill-rule="evenodd" d="M8 14H3.667C2.733 13.9 2 13.167 2 12.233V3.667A1.65 1.65 0 0 1 3.667 2h8.666A1.65 1.65 0 0 1 14 3.667v8.566c0 .934-.733 1.667-1.667 1.767H10v-3.967h1.3l.7-2.066h-2V6.933c0-.466.167-.9.867-.9H12v-1.8c.033 0-.933-.266-1.533-.266-1.267 0-2.434.7-2.467 2.133v1.867H6v2.066h2V14z"></path>' +
-                        '</svg><img class="_1pbs inlineBlock img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uPlIYLfynqH.png" alt="" width="16" height="16">' +
-                    '</span>' +
-                '</span><span class="_49vh _2pi7">Share</span>' +
-            '</div>' +
-        '</button>' +
-    '</div>';
-var lnShareIcon = '<span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;">' +
-	'<span class="li_ui_li_gen_1515155391781_0">' +
-		'<span class="li_ui_li_gen_1515155391781_0-link">'+
-            '<span class="li_ui_li_gen_1515155391781_0-logo">in</span>' +
-                '<span class="li_ui_li_gen_1515155391781_0-title">' +
-                '<span class="li_ui_li_gen_1515155391781_0-mark">' +
-                '</span>' +
-            '<span class="li_ui_li_gen_1515155391781_0-title-text">Share</span>' +
-        '</span>' +
-       '</span>' +
-    '</span>' +
-'</span>';
 var oNewsPager = {
-    template: '<div>' +
-                '<div class="post-meta">' +
-                        '<span>@date</span>' +
-                 '</div>' +
-                 '<div class="post-header">' +
-                    '<h2>@title</h2>' +
-                    '<div class="social-media-share">' +
-                        //'<div class="fb-share-button share-button" data-href="@newslink" data-summary="summary" data-description="description" data-desc="desc" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@fbunewslink&amp;src=sdkpreparse&amp;t=thisisdynamictitle">Share</a></div>' +
-                        '<div class="share-button pull-left"><span onClick=facebookShare("@fbsharelink","@fbsharetitle","@fbsharedesc","@fbshareimage")>' + fbShareIcon + '</span></div>' +
-                        //'<div class="share-button pull-left"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="@twitternewslink" class="twitter-share-button share-button" data-text="@linktitle" data-show-count="false">Tweet</a></div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' +
-                        //'<span class="linkedin-share-button share-button">' +
-                        //    '<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>' +
-                        //    '<script type="IN/Share" data-title="data-title" data-url="@linkedinnewslink" data-counter="right"></script>' +
-                        //'</span>' +
-                        '<div class="share-button"><a href="http://www.linkedin.com/shareArticle?mini=true&summary=@lnsummary&url=@lnurl&title=@lntitle&source=@lnsource" rel="nofollow">' + lnShareIcon + '</a></div>' +
-                        '<br />' +
-                    '</div>' +
-                 '</div>' +
-                 '<div class="post-media">' +
-                    '<img alt="News" title="@tooltip" src="@newsimagesrc">' +
-                 '</div>' +
-                 '<div class="post-entry">@content</div>' +
-              '</div>',
+    template: '<div><div class="post-meta"><span>@date</span></div><div class="post-header"><h2>@title</h2>' +
+                    //    '<div class="social-media-share">' +
+
+                    //    '<div class="fb-share-button share-button" data-href="@newslink" data-summary="summary" data-description="description" data-desc="desc" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=@fbunewslink&amp;src=sdkpreparse&amp;t=thisisdynamictitle">Share</a></div>' +
+
+
+
+                    //    '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="@twitternewslink" class="twitter-share-button share-button" data-text="@linktitle" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' +
+
+
+
+                    //    '<span class="linkedin-share-button share-button">' +
+                    //        '<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>' +
+                    //        '<script type="IN/Share" data-title="data-title" data-url="@linkedinnewslink" data-counter="right"></script>' +
+                    //    '</span>' +
+                    //    '<a href="http://www.linkedin.com/shareArticle?mini=true&summary=@lnsummary&url=@lnurl&submitted-image-url=https://vijayagowrisankar.files.wordpress.com/2017/12/23.png?w=611&title=@lntitle&source=@lnsource" rel="nofollow">Share on LinkedIn</a>' +
+                    //    '<span onClick=facebookShare("http://stravisocapture.000webhostapp.com/fbtest.html","thisismycustomtitle","thisiscustomdescription","https://vijayagowrisankar.files.wordpress.com/2017/12/23.png?w=611")>Share on Facebook</span>' +
+
+                    //'</div>' +
+                '</div><div class="post-media"><img alt="News" title="@tooltip" src="@newsimagesrc"></div><div class="post-entry">@content</div></div>',
     pageIndex: 0,
     pagesize: 6
 }, id, highlightid, sClickedHighlightTitle, iClickedHighlightID, sArticle,
@@ -67,33 +39,33 @@ sLoadingClass = "Loading",
     ], iCount, iTotal = oItalicBookName.length, iTotalHighlight = 6, oNewsHighlightTitle = [iTotalHighlight], oHighlightNewsID = [iTotalHighlight]
     , bIsNewsHighlightLoaded = false, bIsNewsLoaded = false;
 
-function facebookShare(sURL, sTitle, sDescription, sImageURL) {
-    FB.ui({
-        method: 'share',
-        action_type: 'og.shares',
-        object_types:'link',
-        action_properties: JSON.stringify({
-            object: {
-                'og:url': sURL, // your url to share
-                'og:title': decodeURIComponent(sTitle),
-                'og:description': decodeURIComponent(sDescription),
-                'og:image': decodeURIComponent(sImageURL),
-                'og:type': 'news.reads'
-            }
-        })
-    },
-            // callback
-            function (response) {
-                if (response && !response.error_message) {
-                    // then get post content
-                    console.log('successfully posted. Status id : ' + response.post_id);
-                } else {
-                    console.log('Something went error.');
-                }
-            });
-}
+// below function we had created for facebook share POC
+//function facebookShare(sURL, sTitle, sDescription, sImageURL) {
+//    FB.ui({
+//        method: 'share_open_graph',
+//        action_type: 'og.shares',
+//        action_properties: JSON.stringify({
+//            object: {
+//                'og:url': sURL, // your url to share
+//                'og:title': sTitle,
+//                'og:description': sDescription,
+//                'og:image': sImageURL
+//            }
+//        })
+//    },
+//            // callback
+//            function (response) {
+//                if (response && !response.error_message) {
+//                    // then get post content
+//                    alert('successfully posted. Status id : ' + response.post_id);
+//                } else {
+//                    alert('Something went error.');
+//                }
+//            });
+//}
+
 function renderNews() {
-    var iStart, iEnd, entry1, sDate, oDatePart, oDate, sTitle, sRawTitle, sContent, iTotal;
+    var iStart, iEnd, entry1, sDate, oDatePart, oDate, sTitle, sRawTitle, sContent;
     oNewsContainer.removeClass(sLoadingClass);
     if (iTotalNews) {
         if (sArticle) {
@@ -155,48 +127,29 @@ function renderNews() {
                 $("#bloggerContent").html(sContent);
                 var bloggerContent = document.getElementById("bloggerContent");
                 var imgs = bloggerContent.getElementsByTagName('img');
-                var img, src = "", sNewsImageInLinkSrc;
+                var img, src = "";
 
                 if (typeof imgs !== "undefined" && imgs.length > 0) {
                     img = imgs[0];
-                    src = sNewsImageInLinkSrc = img.src;
+                    src = img.src;
                     img.parentNode.removeChild(img);
-                } else {
-                    debugger;
-                    sNewsImageInLinkSrc = document.querySelector("meta[property='og:image']").getAttribute("content");;
                 }
                 sContent = $("#bloggerContent").html();
 
                 var sContent = oNewsPager.template.replace("@title", sTitle)
                                     .replace("@date", oDate)
-                                    .replace("@newsimagesrc", src)
                                     .replace("@content", sContent)
-                                    .replace("@fbunewslink", window.location.origin + "/news?article=" + sRawTitle)
-                                    .replace("@newslink", window.location.origin + "/news?article=" + sRawTitle)
-                                    .replace("@twitternewslink", encodeURI(window.location.origin + "/news?article=" + sRawTitle))
-                                    .replace("@linkedinnewslink", encodeURI(window.location.origin + "/news?article=" + sRawTitle))
-                                    .replace("@lnurl", encodeURI(window.location.origin + "/news?article=" + sRawTitle))
-                                    .replace("@fbsharelink", encodeURI(window.location.origin + "/news?article=" + sRawTitle))
-                                    .replace("@fbsharetitle", encodeURIComponent(sRawTitle))
-                                    .replace("@fbsharedesc", encodeURIComponent(sRawTitle))
-                                    .replace("@fbshareimage", encodeURIComponent(sNewsImageInLinkSrc))
+                                    .replace("@newsimagesrc", src)
+                                    .replace("@fbunewslink", "https://maqsoftware.com/news?article=" + sRawTitle)
+                                    .replace("@newslink", "https://maqsoftware.com/news?article=" + sRawTitle)
+                                    .replace("@twitternewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
+                                    .replace("@linkedinnewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
+                                    .replace("@lnurl", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
                                     .replace("@linktitle", sRawTitle.substr(0, 200))
                                     .replace("@lnsummary", sRawTitle.substr(0, 256))
                                     .replace("@lntitle", sRawTitle)
                                     .replace("@lnsource", "MAQ Software")
                                     .replace("@tooltip", getFirstNWordsWithEllipses(sTitle, 4));
-
-                //$("#bloggerContent").html(sContent);
-                //if (src) {
-                //    sContent = sContent;
-                //} else {
-                //    debugger;
-                //    bloggerContent = document.getElementById("bloggerContent");
-                //    imgs = bloggerContent.getElementsByTagName('img');
-                //    img = imgs[0];
-                //    img.parentNode.removeChild(img);
-                //    sContent = $("#bloggerContent").html();
-                //}
                 oNewsContainer.append(sContent);
 
             }
@@ -374,22 +327,22 @@ function initHighlightCarousal() {
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
         navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
         dots: false
-            , responsive: {
-                0: {
-                    items: 1
-                }
-                ,
-                570: {
-                    items: 2
-                }
-                ,
-                855: {
-                    items: 3
-                }
-                , 1140: {
-                    items: 4
-                }
+        ,responsive: {
+            0: {
+                items: 1
             }
+            ,
+            570: {
+                items: 2
+            }
+            ,
+            855: {
+                items: 3
+            }
+            , 1140: {
+                items: 4
+            }
+        }
     });
 }
 
@@ -407,7 +360,6 @@ function newsConstructor() {
     var iTop = 0;
     id = getParameterByName("id");
     sArticle = getParameterByName("article");
-
     if (typeof id !== "undefined" && id !== "") {
         $(sScrollElement).animate({
             scrollTop: iTop
@@ -440,9 +392,7 @@ function newsConstructor() {
             }
             oNewsContainer.html("").addClass(sLoadingClass);
             iTop = oNewsContainer.offset().top - 65; // -65 for header/padding
-            $(sScrollElement).animate({
-                scrollTop: iTop
-            }, 500);
+            $(sScrollElement).animate({ scrollTop: iTop }, 500);
             renderNews();
         }
     });

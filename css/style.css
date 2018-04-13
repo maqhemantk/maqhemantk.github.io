@@ -112,6 +112,9 @@ a {
         -webkit-transition: all 0.25s ease 0s;
         -o-transition: all 0.25s ease 0s;
     }
+    a.silent:hover{
+        color: Black !important;
+    }
 
 .video {
     display: block;
@@ -281,6 +284,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    
     font-size: 43px;
     letter-spacing: 2px;
     line-height: 40px;
@@ -289,7 +293,9 @@ h1 {
     h1.h1, h2.h2 {
         letter-spacing: 4px;
     }
-
+h1, h2{
+    font-family: 'Arial', sans-serif;
+}
 @media (max-width: 767px) {
     h1.h1, h2.h2 {
         letter-spacing: 0px;
@@ -781,6 +787,19 @@ form label.error {
     padding-bottom: 15px;
 }
 
+.ptb-25 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.pt-25 {
+    padding-top: 25px;
+}
+
+.pb-25 {
+    padding-bottom: 25px;
+}
+
 .ptb-60 {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -1034,6 +1053,30 @@ form label.error {
     margin-bottom: 25px;
 }
 
+.mtb-40 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+.mtb-50 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mt-50 {
+    margin-top: 40px;
+}
+
+.mb-50 {
+    margin-bottom: 40px;
+}
 
 .mtb-80 {
     margin-top: 80px;
@@ -1047,6 +1090,21 @@ form label.error {
 .mb-80 {
     margin-bottom: 80px;
 }
+
+
+.mtb-90 {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.mt-90 {
+    margin-top: 90px;
+}
+
+.mb-90 {
+    margin-bottom: 90px;
+}
+
 
 .mtb-60 {
     margin-top: 60px;
@@ -1466,7 +1524,7 @@ form label.error {
     .header .logo a {
         margin-top: 13px;
         margin-bottom: 16px;
-        width: 96px;
+        width: 135px;
         transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
         -moz-transition: all 0.3s ease 0s;
@@ -1500,7 +1558,7 @@ form label.error {
             width: 100%;
             position: absolute;
             top: 0;
-            left: 0;
+            left: -15px;
             transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
             -o-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
             -moz-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
@@ -2200,7 +2258,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
 
 .inner-intro {
     position: relative;
-    padding: 200px 0;
+    padding-top: 64px;
 }
 
     .inner-intro h1 {
@@ -2695,7 +2753,6 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
 
 .Pricing-box .pricing-features {
     font-size: 13px;
-    text-transform: uppercase;
 }
 
     .Pricing-box .pricing-features ul {
@@ -2744,7 +2801,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
     .client-logo img {
         height: auto;
         max-height: 100%;
-        width: auto;
+        width: auto !important;
         /*margin-right: 15px;
         margin-left: 15px;*/
     }
@@ -3025,7 +3082,8 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
 
 .inner-intro {
     background-color: #f7f7f7;
-    height: 530px;
+    height: 45vh;
+    min-height: 250px;
     display: block;
     position: relative;
 }
@@ -3041,8 +3099,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
     }
 
         .inner-intro .container .title {
-            padding-bottom: 65px;
-            padding-top: 65px;
+            
             display: table-cell;
             vertical-align: middle;
             text-align: center;
@@ -3414,6 +3471,8 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
 .spacing-grid {
     padding-top: 25px;
     padding-bottom: 25px;
+    padding-left:10px;
+    padding-right:10px;
 }
 
 .nf-col-1 .nf-item, .nf-col-1 .grid-sizer {
@@ -3553,7 +3612,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
     }
 
     .fullwidth-slider .item {
-        height: 325px !important;
+        height: 425px !important;
     }
 
     .fullwidth-slider .owl-buttons, .fullwidth-slider .owl-nav {
@@ -3571,14 +3630,14 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
 @media (max-width: 320px) {
 
     .fullwidth-slider .item {
-        height: 275px !important;
+        height: 425px !important;
     }
 }
 
 @media (orientation:landscape) and (max-width: 515px) {
 
     .fullwidth-slider .item {
-        height: 186px !important;
+        height: 335px !important;
     }
 
     .owl-buttons, .owl-nav {
@@ -3588,7 +3647,7 @@ header.header-dark.header-prepare .side-menu-btn ul li a {
 
 @media (orientation:landscape) and (max-width: 480px) {
     .fullwidth-slider .item {
-        height: 186px !important;
+        height: 335px !important;
     }
 }
 /* ----------------------------------------------------------------------*/
@@ -4225,6 +4284,7 @@ ul.project-detail-block, .project-detail-block ul {
         display: -webkit-flex;
         height: 100%;
         width: 100%;
+        
     }
 
         .shop-item .item-mask .item-mask-detail .item-mask-detail-ele {
@@ -4236,6 +4296,13 @@ ul.project-detail-block, .project-detail-block ul {
     display: block;
     position: relative;
     overflow: hidden;
+    /*border: 1px solid grey;*/
+}
+.item-img img{
+    max-height:40vw;
+    max-width:40vw;
+    margin-right:auto;
+    margin-left:auto
 }
 
 .shop-item-info {
@@ -4368,9 +4435,14 @@ ul.project-detail-block, .project-detail-block ul {
 }
 
     .fullwidth-slider .item {
-        height: 650px;
+        height: 55vh;
+        min-height:200px;
         position: relative;
         width: 100%;
+    }
+    .fullwidth-slider.expertise .item  {
+        height: 38vh;
+        min-height:375px;
     }
 
 
@@ -4531,14 +4603,15 @@ ul.project-detail-block, .project-detail-block ul {
         -o-transform: scale(1.5);
     }
 
-    .owl-carousel.white .owl-controls .owl-page span, .owl-carousel .owl-dots .owl-dot span {
+    .owl-carousel.white .owl-controls .owl-page span, .owl-carousel.white .owl-dots .owl-dot span {
         background: none repeat scroll 0 0 #fff;
     }
 
-    .owl-carousel.white .owl-controls .owl-page.active span, .owl-carousel .owl-dots .owl-dot.active span {
+    .owl-carousel.white .owl-controls .owl-page.active span, .owl-carousel.white .owl-dots .owl-dot.active span {
         background: rgba(0, 0, 0, 0);
         border: 2px solid #fff;
     }
+
 
 /*.nf-carousel-theme {
 }*/
@@ -5008,13 +5081,24 @@ ul.project-detail-block, .project-detail-block ul {
 
 /*Recognition Controls*/
 .RecognitionImage img {
-    max-width: 250px;
-    max-height: 140px;
+    max-width: 210px;
+    max-height: 120px;
+    margin: 0 auto;
+    vertical-align: middle;
 }
 
 .RecognitionImage {
     padding-bottom: 15px;
+    
+    white-space: nowrap;
 }
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
 
 /*.RecognitionContent {
 }*/
@@ -5494,7 +5578,7 @@ ul.nav-tabs {
     margin:auto;
     margin-top:25px;
     display:block;
-    box-shadow: 1px 1px 1px lightgray,-1px -1px 1px lightgray;
+    box-shadow: 2px 2px 2px lightgray,-1px -1px 1px lightgray;
 }
 
 .figureTitle{
@@ -5508,219 +5592,60 @@ ul.nav-tabs {
 .item-mask>.item-caption{
     padding-top:20%;
 }
-
-.chrome ._2tga._49ve {
-    padding-bottom: 1px;
-}
-
-._2tga._49ve {
-    border-radius: 3px;
-    font-size: 11px;
-    height: 20px;
-    padding: 0 0 0 2px;
-    line-height: normal;
-}
-
-
-.pluginFontHelvetica, .pluginFontHelvetica button, .pluginFontHelvetica input, .pluginFontHelvetica label, .pluginFontHelvetica select, .pluginFontHelvetica td, .pluginFontHelvetica textarea {
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-.plugin, .plugin button, .plugin input, .plugin label, .plugin select, .plugin td, .plugin textarea {
-    font-size: 11px;
-}
-
-.inlineBlock {
-    display: inline-block;
-    zoom: 1;
-}
-
-._2tga {
-    background: #4267b2;
-    border: 1px solid #4267b2;
-    color: #fff;
-    cursor: pointer;
-    font-family: Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
-    -webkit-user-select: none;
-    white-space: nowrap;
-}
-._3jn- {
-    /*height: 16px;*/
-    vertical-align: middle;
-    width: 16px;
-}
-
-._3jn_ {
-    background: none;
-    display: none;
-    height: 28px;
-    left: -6px;
+.owl-dots {
     position: absolute;
-    top: -6px;
-    width: 28px;
+    bottom: 0;
+    z-index: 2;
+    bottom: 15px;
+    left: 0;
+    text-align: center;
+    width: 100%;
 }
-
-._49vg, ._5n2y {
-    vertical-align: middle;
+.firstItem{
+    
 }
-
-._2tga ._1pbq {
-    height: 16px;
-    width: 16px;
+.item1-carousel .item{
+    margin-right: 20px;
 }
-
-svg[Attributes Style] {
-    color: rgb(255, 255, 255);
+.item1-carousel .owl-dots{
+    bottom:0px;
 }
-svg:not(:root), symbol, image, marker, pattern, foreignObject {
-    overflow: hidden;
+.owl-height{
+    height:auto !important;
 }
-html * > svg {
-    transform-origin: 50% 50% 0px;
+.owl-stage{
+    min-width:3000px !important;
 }
-._2tga ._1pbs {
-    display: none;
+.CircleBullets{
+    list-style-type: disc;
+    padding-left: 35px;
+    color:black;
+    margin:0px;
+    font-size: 14px;
 }
-
-
-#facebook ._2tga span._49vh, #facebook ._2tga span._5n6h, ._49vh, ._5n6h {
-    font-family: Helvetica, Arial, sans-serif;
-    vertical-align: middle;
+.demo{
+    height:100vh !important;
+    padding:0px !important;
+    padding-top:64px !important;
 }
-
-._2pi7 {
-    padding-left: 4px;
-    padding-right: 4px;
+.ultrabold{
+    color:black !important; 
+    font-weight: 900; 
+    line-height:35px;
 }
-
-._49vh {
-    font-weight: bold;
+#client-logos .owl-next{
+    display:none !important;
 }
-
-.li_ui_li_gen_1515155391781_0 {
-    position: relative !important;
-    overflow: visible !important;
-    /*display: block !important;*/
+#client-logos .owl-prev{
+    display:none !important;
 }
-
-.li_ui_li_gen_1515155391781_0 a.li_ui_li_gen_1515155391781_0-link:link, .li_ui_li_gen_1515155391781_0 a.li_ui_li_gen_1515155391781_0-link:visited, .li_ui_li_gen_1515155391781_0 a.li_ui_li_gen_1515155391781_0-link:hover, .li_ui_li_gen_1515155391781_0 a.li_ui_li_gen_1515155391781_0-link:active {
-    border: 0 !important;
-    text-decoration: none !important;
+.twitter-timeline{
+    height:100px !important;
 }
-
-.li_ui_li_gen_1515155391781_0 a.li_ui_li_gen_1515155391781_0-link {
-    border: 0 !important;
-    height: 20px !important;
-    text-decoration: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: inline-block !important;
+.compactBullets{
+    margin-top:5px;
+    margin-bottom:10px
 }
-
-.li_ui_li_gen_1515155391781_0 .li_ui_li_gen_1515155391781_0-logo {
-    background-image: url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;
-    background-position: 0px -593px !important;
-    background-repeat: no-repeat !important;
-    background-color: #0077b5 !important;
-    background-size: initial !important;
-    cursor: pointer !important;
-    border: 0 !important;
-    border-right: 1px solid #066094 !important;
-    text-indent: -9999em !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    position: absolute !important;
-    left: 0px !important;
-    top: 0px !important;
-    display: block !important;
-    width: 20px !important;
-    height: 20px !important;
-    float: right !important;
-    border-radius: 2px !important;
-    -webkit-border-radius: 2px !important;
-    border-top-right-radius: 2px !important;
-    border-bottom-right-radius: 2px !important;
-    -webkit-border-top-right-radius: 2px !important;
-    -webkit-border-bottom-right-radius: 2px !important;
-}
-
-.li_ui_li_gen_1515155391781_0 .li_ui_li_gen_1515155391781_0-title {
-    color: #fff !important;
-    cursor: pointer !important;
-    display: block !important;
-    white-space: nowrap !important;
-    float: left !important;
-    margin-left: 1px !important;
-    vertical-align: top !important;
-    overflow: hidden !important;
-    text-align: center !important;
-    height: 18px !important;
-    padding: 0 4px 0 23px !important;
-    border: 1px solid #000 !important;
-    border-top-color: #0077b5 !important;
-    border-right-color: #0077b5 !important;
-    border-bottom-color: #0077b5 !important;
-    border-left-color: #0077b5 !important;
-    text-shadow: 0 -1px #005887 !important;
-    line-height: 20px !important;
-    border-radius: 2px !important;
-    -webkit-border-radius: 2px !important;
-    border-top-right-radius: 2px !important;
-    border-bottom-right-radius: 2px !important;
-    -webkit-border-top-right-radius: 2px !important;
-    -webkit-border-bottom-right-radius: 2px !important;
-    background-color: #0077b5 !important;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important;
-    background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;
-}
-
-.li_ui_li_gen_1515155391781_0 .li_ui_li_gen_1515155391781_0-title .li_ui_li_gen_1515155391781_0-mark {
-    display: inline-block !important;
-    width: 0px !important;
-    overflow: hidden !important;
-}
-
-
-.li_ui_li_gen_1515155391781_0 span {
-    -webkit-box-sizing: content-box !important;
-    -moz-box-sizing: content-box !important;
-    box-sizing: content-box !important;
-}
-.li_ui_li_gen_1515155391781_0 span {
-    -webkit-box-sizing: content-box !important;
-    -moz-box-sizing: content-box !important;
-    box-sizing: content-box !important;
-}
-
-.li_ui_li_gen_1515155391781_0 .li_ui_li_gen_1515155391781_0-title-text, .li_ui_li_gen_1515155391781_0 .li_ui_li_gen_1515155391781_0-title-text * {
-    color: #fff !important;
-    font-size: 11px !important;
-    font-family: Arial, sans-serif !important;
-    font-weight: bold !important;
-    font-style: normal !important;
-    -webkit-font-smoothing: antialiased !important;
-    display: inline-block !important;
-    background: transparent none !important;
-    vertical-align: top !important;
-    height: 18px !important;
-    line-height: 20px !important;
-    float: none !important;
-}
-
-.li_ui_li_gen_1515155391781_0 span {
-    -webkit-box-sizing: content-box !important;
-    -moz-box-sizing: content-box !important;
-    box-sizing: content-box !important;
-}
-
-.li_ui_li_gen_1515155391781_0 a.li_ui_li_gen_1515155391781_0-link:after {
-    content: "." !important;
-    display: block !important;
-    clear: both !important;
-    visibility: hidden !important;
-    line-height: 0 !important;
-    height: 0 !important;
+.compacth5{
+    margin-bottom:5px;
 }
