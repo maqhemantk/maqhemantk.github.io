@@ -9,15 +9,15 @@ var oNewsPager = {
 
 
 
-                    //    '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="@twitternewslink" class="twitter-share-button share-button" data-text="@linktitle" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' +
+                        '<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-url="@twitternewslink" class="twitter-share-button share-button" data-text="@linktitle" data-show-count="true">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' +
 
 
 
-                    //    '<span class="linkedin-share-button share-button">' +
-                    //        '<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>' +
-                    //        '<script type="IN/Share" data-title="data-title" data-url="@linkedinnewslink" data-counter="right"></script>' +
-                    //    '</span>' +
-                    //    '<a href="http://www.linkedin.com/shareArticle?mini=true&summary=@lnsummary&url=@lnurl&submitted-image-url=https://vijayagowrisankar.files.wordpress.com/2017/12/23.png?w=611&title=@lntitle&source=@lnsource" rel="nofollow">Share on LinkedIn</a>' +
+                        '<span class="linkedin-share-button share-button">' +
+                            '<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>' +
+                            '<script type="IN/Share" data-title="data-title" data-url="@linkedinnewslink" data-counter="right"></script>' +
+                        '</span>' +
+                        '<a href="http://www.linkedin.com/shareArticle?mini=true&summary=@lnsummary&url=@lnurl&submitted-image-url=https://vijayagowrisankar.files.wordpress.com/2017/12/23.png?w=611&title=@lntitle&source=@lnsource" rel="nofollow">Share on LinkedIn</a>' +
                     //    '<span onClick=facebookShare("http://stravisocapture.000webhostapp.com/fbtest.html","thisismycustomtitle","thisiscustomdescription","https://vijayagowrisankar.files.wordpress.com/2017/12/23.png?w=611")>Share on Facebook</span>' +
 
                     //'</div>' +
