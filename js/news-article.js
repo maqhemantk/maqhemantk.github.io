@@ -116,7 +116,7 @@ function renderNews() {
         oNewsContainer.find("img").addClass("post - media");
 
         document.getElementsByTagName('meta')['og:image'].setAttribute('content', src);
-        document.getElementsByTagName('meta')['twitter:image'].setAttribute('content', src);
+        document.getElementsByTagName('meta')['twitter:image:src'].setAttribute('content', src);
         $('#LoadPageNewsArticle *').removeAttr('style');
 
 
