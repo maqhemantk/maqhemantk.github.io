@@ -121,8 +121,8 @@ function renderNews() {
         oNewsContainer.find("a").attr("target", "_blank");
         oNewsContainer.find("img").addClass("post - media");
 
-        document.getElementsByTagName('meta')['og:image'].setAttribute('content', src);
-        document.getElementsByTagName('meta')['twitter:image'].setAttribute('content', src);
+        document.getElementsByTagName('meta')['og:image'].setAttribute('content', "https://2.bp.blogspot.com/-8dbdkaabH3A/Wi8-akaux7I/AAAAAAAAArw/YGuNV3QMfW06wcIazXQUtEGusvRleoOhQCLcBGAs/s1600/entrepreneur.jpg");
+        document.getElementsByTagName('meta')['twitter:image:src'].setAttribute('content', "https://2.bp.blogspot.com/-8dbdkaabH3A/Wi8-akaux7I/AAAAAAAAArw/YGuNV3QMfW06wcIazXQUtEGusvRleoOhQCLcBGAs/s1600/entrepreneur.jpg");
         $('#LoadPageNewsArticle *').removeAttr('style');
 
 
