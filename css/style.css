@@ -4090,15 +4090,7 @@ ul.project-detail-block, .project-detail-block ul {
     }
 
     .blog-post .post-header h2 {
-        margin-bottom: 20px;
-    }
-
-    .blog-post .social-media-share {
-        margin-bottom: 10px;
-    }
-
-    .blog-post .social-media-share .share-button, .social-media-share .twitter-share-button {
-        margin-right: 5px;
+        margin-bottom: 30px;
     }
 
     .blog-post .post-entry {
@@ -5565,6 +5557,7 @@ ul.nav-tabs {
 .fb-share-button { 
     vertical-align: bottom !important; 
     margin-bottom:2px;
+    display: inline
 }
 .linkedin-share-button[style] {
     vertical-align: bottom !important; 
