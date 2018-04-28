@@ -109,12 +109,13 @@ function renderNews() {
                 oNewsContainer.append(oNewsArticlePager.template.replace("@date", oDate).replace("@content", sContent).replace(/@newsimagesrc/g, src).replace("@tooltip", getFirstNWordsWithEllipses(sRawTitle, 4)));
                 document.getElementsByTagName('meta')['og:image'].setAttribute('content', src);
                 document.getElementsByTagName('meta')['twitter:image:src'].setAttribute('content', src);
-                $(".post-header").append(oNewsArticlePager.socialMediatemplate.replace(/@title/g, sTitle).replace(/@newsimagesrc/g, src).replace("@fbunewslink", "https://maqsoftware.com/news?article=" + sRawTitle).replace("@newslink", "https://maqsoftware.com/news?article=" + sRawTitle).replace("@twitternewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle)).replace("@linkedinnewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
+                setTimeout(function () {$(".post-header").append(oNewsArticlePager.socialMediatemplate.replace(/@title/g, sTitle).replace(/@newsimagesrc/g, src).replace("@fbunewslink", "https://maqsoftware.com/news?article=" + sRawTitle).replace("@newslink", "https://maqsoftware.com/news?article=" + sRawTitle).replace("@twitternewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle)).replace("@linkedinnewslink", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
                                     .replace("@lnurl", encodeURI("https://maqsoftware.com/news?article=" + sRawTitle))
                                     .replace("@linktitle", sRawTitle.substr(0, 200))
                                     .replace("@lnsummary", sRawTitle.substr(0, 256))
                                     .replace("@lntitle", sRawTitle)
-                                    .replace("@lnsource", "MAQ Software"));
+                                    .replace("@lnsource", "MAQ Software")); }, 2000)
+                
             }
         
         oNewsContainer.find("a").attr("target", "_blank");
