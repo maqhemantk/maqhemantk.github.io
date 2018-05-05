@@ -159,7 +159,7 @@ function renderNewsHighlight() {
 
             $("#newshighlighttitle" + iNumber).html(title);
             $("#newshighlightimg" + iNumber).attr('src', src);
-            $("#newshighlightimg" + iNumber).attr('title',getFirstNWordsWithEllipses(title,4));
+            $("#newshighlightimg" + iNumber).attr('title', getFirstNWordsWithEllipses(title, 4));
         }
     }
 }
