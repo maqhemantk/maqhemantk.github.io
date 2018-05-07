@@ -23,7 +23,7 @@ sLoadingClass = "Loading",
 var newsTitle;
 function readQueryParams() {
     var params = (new URL(document.location)).searchParams;
-    newsTitle = params.get("title");
+    newsTitle = unescape(params.get("title"));
     if (typeof newsTitle !== 'undefined' && newsTitle !== 'null' && newsTitle !== "" && newsTitle !== 'false') {
         loadNewsGrid();
     }
@@ -107,7 +107,7 @@ function renderNews() {
             sContent = $("#bloggerContent").html();
             oNewsContainer.addClass(sLoadingClass);
             oNewsContainer.append(oNewsArticlePager.template.replace("@date", oDate).replace("@content", sContent).replace(/@newsimagesrc/g, src).replace("@tooltip", getFirstNWordsWithEllipses(sRawTitle, 4)));
-            //   document.getElementsByTagName('meta')['og:image'].setAttribute('content', src);
+             //  document.getElementsByTagName('meta')['og:image'].setAttribute('content', src);
             //   document.getElementsByTagName('meta')['twitter:image:src'].setAttribute('content', src);
             setTimeout(function () {
                 $(".post-header").append(oNewsArticlePager.socialMediatemplate.replace(/@title/g, sTitle).replace(/@newsimagesrc/g, src).replace("@fbunewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@newslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@twitternewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@linkedinnewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle)))
