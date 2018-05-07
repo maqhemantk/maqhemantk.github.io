@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- Microdata markup added by Google Structured Data Markup Helper. -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
@@ -12,7 +12,7 @@
     <!-- Open Graph data -->
     <meta name="og:title" property="og:title" content="MAQ Software | Data Management, Power BI, Artificial Intelligence" />
     <meta name="og:description" property="og:description" content="MAQ Software Case Studies" />
-    <meta property="og:image" name="og:image" content="/img/news/entrepreneurArticle.jpg" />
+    <meta property="og:image" name="og:image" content="https://maqsoftware.com/img/Banners/news.jpg" />
     <meta property="og:image:width" content="450" />
     <meta property="og:image:height" content="298" />
     <!-- End Open Graph data -->
@@ -21,7 +21,7 @@
     <meta name="twitter:site" content="@maqsoftware" />
     <meta name="twitter:title" content="MAQ Software | Data Management, Power BI, Artificial Intelligence" />
     <meta name="twitter:description" content="MAQ Software Case Studies" />
-    <meta name="twitter:image" content="/img/news/entrepreneurArticle.jpg" />
+    <meta name="twitter:image:src" content="https://maqsoftware.com/img/Banners/news.jpg" />
     <!-- End Twitter Card data -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="fragment" content="!">
@@ -53,16 +53,19 @@
     </script>-->
     <!-- /Github Pages hack. -->
 </head>
+
 <body>
     <!--Facebook Java SDK-->
     <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    
     <!-- Preloader -->
     <section id="preloader">
         <div class="loader" id="loader">
@@ -137,6 +140,7 @@
             <div class="container">
                 <div class="row title">
                     <h2 class="h2">News</h2>
+
                 </div>
             </div>
         </section>
@@ -164,6 +168,7 @@
                                 <li><a>Book</a></li>
                             </ul>
                         </div>
+
                     </div>
                     <!-- End Sidebar -->
                 </div>
@@ -251,6 +256,7 @@
     <script src="/js/plugin/tether.min.js?v=20170822" type="text/javascript"></script>
     <script src="/js/jquery-1.11.2.min.js?v=20170822" type="text/javascript"></script>
     <script src="/js/plugin/jquery.easing.js?v=20170822" type="text/javascript"></script>
+
     <script src="/js/jquery-ui.min.js?v=20170822" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js?v=20170822" type="text/javascript"></script>
     <script src="/js/plugin/jquery.flexslider.js?v=20170822" type="text/javascript"></script>
@@ -277,6 +283,7 @@
     <script src="/js/news-article.js?v=20180421.1" type="text/javascript"></script>
     <!--<script src="/js/app.js?v=20170828.3" type="text/javascript"></script>-->
     <script src="/js/careers.js?v=20170822"></script>
+
     <script type="application/ld+json">
         { "@context" : "http://schema.org",
         "@type" : "Organization",
@@ -315,7 +322,9 @@
     </script>
     <!-- End Google Analytics -->
 </body>
+
 </html>
+
 <script>
     loadPlugins();
     updateTitle("expertise");
