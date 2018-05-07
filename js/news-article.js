@@ -109,17 +109,31 @@ function renderNews() {
             oNewsContainer.append(oNewsArticlePager.template.replace("@date", oDate).replace("@content", sContent).replace(/@newsimagesrc/g, src).replace("@tooltip", getFirstNWordsWithEllipses(sRawTitle, 4)));
              //  document.getElementsByTagName('meta')['og:image'].setAttribute('content', src);
             //   document.getElementsByTagName('meta')['twitter:image:src'].setAttribute('content', src);
+            var pageURL = document.location.href;
             setTimeout(function () {
-                $(".post-header").append(oNewsArticlePager.socialMediatemplate.replace(/@title/g, sTitle).replace(/@newsimagesrc/g, src).replace("@fbunewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@newslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@twitternewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@linkedinnewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle)))
+                $(".post-header").append(oNewsArticlePager.socialMediatemplate.replace(/@title/g, sTitle).replace(/@newsimagesrc/g, src).replace("@fbunewslink", pageURL).replace("@newslink", pageURL).replace("@twitternewslink", pageURL).replace("@linkedinnewslink", pageURL)
 
 
-                                .replace("@lnurl", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle)))
+                                .replace("@lnurl", pageURL)
                                 .replace("@linktitle", sRawTitle.substr(0, 200))
                                 .replace("@lnsummary", sRawTitle.substr(0, 256))
                                 .replace("@lntitle", sRawTitle)
                                 .replace("@lnsource", "MAQ Software"));
+
                 FB.XFBML.parse();
             }, 1000);
+            //setTimeout(function () {
+            //    $(".post-header").append(oNewsArticlePager.socialMediatemplate.replace(/@title/g, sTitle).replace(/@newsimagesrc/g, src).replace("@fbunewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@newslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@twitternewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle))).replace("@linkedinnewslink", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle)))
+
+
+            //                    .replace("@lnurl", encodeURI("https://maqhemantk.github.io/news-article.html?title=" + escape(sRawTitle)))
+            //                    .replace("@linktitle", sRawTitle.substr(0, 200))
+            //                    .replace("@lnsummary", sRawTitle.substr(0, 256))
+            //                    .replace("@lntitle", sRawTitle)
+            //                    .replace("@lnsource", "MAQ Software"));
+
+            //    FB.XFBML.parse();
+            //}, 1000);
             
 
         }
