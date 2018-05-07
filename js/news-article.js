@@ -109,6 +109,8 @@ function renderNews() {
             oNewsContainer.append(oNewsArticlePager.template.replace("@date", oDate).replace("@content", sContent).replace(/@newsimagesrc/g, src).replace("@tooltip", getFirstNWordsWithEllipses(sRawTitle, 4)));
              //  document.getElementsByTagName('meta')['og:image'].setAttribute('content', src);
             //   document.getElementsByTagName('meta')['twitter:image:src'].setAttribute('content', src);
+             document.getElementsByTagName('meta')['og:description'].setAttribute('content', sRawTitle);
+            document.getElementsByTagName('meta')['twitter:description'].setAttribute('content', sRawTitle);
             var pageURL = document.location.href;
             setTimeout(function () {
                 $(".post-header").append(oNewsArticlePager.socialMediatemplate.replace(/@title/g, sTitle).replace(/@newsimagesrc/g, src).replace("@fbunewslink", pageURL).replace("@newslink", pageURL).replace("@twitternewslink", pageURL).replace("@linkedinnewslink", pageURL)
