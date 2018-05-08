@@ -1,4 +1,7 @@
 var pageSection;
+var visualTemplate = '<div class="item"> <div class="nf-col-padding"> <div class="item-box"> <div class="shop-item"> <div class="item-img"> <img alt="@name" src="@img"/> </div><div class="item-mask"> <div class="item-mask-detail"> <div class="item-caption text-center" style="color:white;"> <div> @description </div><a data-toggle="modal" data-target="#model@id" class="btn btn-line-xs btn-white-line"> <i class="fa"></i>Learn More </a> </div></div></div></div><div class="shop-item-info"> <a href="@url" target="_blank"> <h6 class="shop-item-name">@name</h6> </a> </div></div></div></div>';
+var modalTemplate = '<div class="modal fade product_view" id="model@id"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h3 class="modal-title pull-left">@title</h3> <a href="#" data-dismiss="modal" class="class pull-right"> <span class="glyphicon glyphicon-remove"></span> </a> </div><div class="modal-body"> <div class="row"> <div class="col-md-6 product_img"> <img alt="@name" title="@name" src="@img" class="img-responsive"> </div><div class="col-md-6 product_content"> @content<p> For any feature requests or questions about this visual, please send an e-mail to our team at <a href="mailto:Support@MAQSoftware.com">Support@MAQSoftware.com</a>. </p><a href="@url" target="_blank" class="btn btn-md btn-black-line ">See in AppSource</a> </div></div></div></div></div></div>';
+
 Date.prototype.format = function () {
     "use strict";
     var arrMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -31,6 +34,9 @@ $(document).ready(function () {
     scroll();
     pluginElement();
     sliderHero();
+    //if (!($(".power-bi-carousel").length)) {
+    //    PowerBIVisualsConfig();
+    //}
     SliderConfig();
     containerGridMasonry();
     scrollCallbackEle();
@@ -67,6 +73,9 @@ function loadPlugins() {
     scroll();
     pluginElement();
     sliderHero();
+    if (!($(".power-bi-carousel").length)) {
+        PowerBIVisualsConfig();
+    }
     SliderConfig();
     containerGridMasonry();
     scrollCallbackEle();
@@ -279,10 +288,38 @@ function PowerBIVisualsConfig() {
 };
 
 function RenderPowerBIVisuals(oVisualConfig) {
+    var totalVisuals = oVisualConfig.length;
+    var visualContainer = $("#power-bi-carousel");
+    var modalContainer = $("#modelChart");
+    var visualSliderHtml = '<div class="owl-carousel power-bi-carousel nf-carousel-theme o-flow-hidden" id="PowerBISliderVisual"></div>';
+    var visualContentHtml = "";
+    var modalContentHtml = "";
+    visualContainer.append(visualSliderHtml);
+    $.each(oVisualConfig, function (index, item) {
 
+        $.each(Object.keys(this), function (index1, item1) {
+
+            visualContentHtml += visualTemplate.replace(/@name/g, oVisualConfig[index][this].name)
+                .replace(/@img/g, oVisualConfig[index][this].img)
+                .replace(/@description/g, oVisualConfig[index][this].description)
+                .replace(/@id/g, oVisualConfig[index][this].id)
+                .replace(/@url/g, oVisualConfig[index][this].url);
+            modalContentHtml += modalTemplate.replace(/@name/g, oVisualConfig[index][this].name)
+                .replace(/@img/g, oVisualConfig[index][this].img)
+                .replace(/@title/g, oVisualConfig[index][this].title)
+                .replace(/@id/g, oVisualConfig[index][this].id)
+                .replace(/@url/g, oVisualConfig[index][this].url)
+                .replace(/@content/g, oVisualConfig[index][this].content);
+        })
+    });
+    var visualContentContainer = $("#PowerBISliderVisual");
+    visualContentContainer.append(visualContentHtml);
+    modalContainer.append(modalContentHtml);
+    
 }
 
 function sliderAll(oSliderConfig) {
+    
     //full-width slider
     if (typeof oSliderConfig !== 'undefined' && oSliderConfig !== 'null' && oSliderConfig !== "" && oSliderConfig !== 'false')
     {
@@ -483,6 +520,7 @@ function sliderAll(oSliderConfig) {
         navigation: true,  // Show next and prev buttons
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
     });
+    
     if (typeof oSliderConfig !== 'undefined' && oSliderConfig !== 'null' && oSliderConfig !== "" && oSliderConfig !== 'false') {
         $('.power-bi-carousel').owlCarousel({
             autoplay: (oSliderConfig.autoplay !== typeof undefined ? oSliderConfig.autoplay : 2500),
