@@ -1,0 +1,26 @@
+[
+  {
+    "Cylindrical Gauge": {
+      "name": "Cylindrical Gauge",
+      "title": "Cylindrical Gauge",
+      "id": "CylindricalGaugeChart",
+      "description": "Display a metric against a target value or capacity with this intuitive 3D cylinder.",
+      "url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104380874?tab=Overview",
+      "img": "../img/PowerBI/Box_and_Whisker_GIF.gif",
+      "content": "<p>Tracks current values against a target with an intuitive 3D cylinder visual. The cylindrical gauge's fill line gives users an easy way to understand how actual values weigh against a target capacity. The tool is useful for evaluating inventory, fuel, or other repository levels.</p><p>Features:</p><ul class='CircleBullets'> <li>Actual value display. For added clarity, the fill line's actual value is listed below the cylinder.</li><li>Tick marks. Users may adjust or disable this feature. By default, tick values are enabled, with the minimum set to 0 and the maximum set to 100.</li><li>Max threshold definition. Users may include a maximum threshold to see whether the actual value is over capacity.</li><li>Scroll bar. When height restrictions limit how much of the gauge is visible, a vertical scroll bar allows users to navigate up and down.</li></ul> <a href='https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104380874?tab=Overview' target='_blank' class='btn btn-md btn-black-line '>See in AppSource</a> </div>",
+      "category":  ""
+    }
+  },
+  {
+    "Bowtie Chart": {
+      "name": "Bowtie Chart",
+      "title": "Bowtie Chart",
+      "id": "BowtieChart",
+      "description": "Show a flow of data and quickly compare values in one or more categories.",
+      "url": "https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104380838?tab=Overview",
+      "img": "../img/PowerBI/Bowtie_Chart_GIF.gif",
+      "content": "<p>Use Bowtie Chart by MAQ Software to quickly compare values in one or more categories. The thickness of the bowtie's branches indicates the relative weight of each category. Users can create a half bowtie, showcasing the distribution of data within a source. Or, by entering values in the source, destination, and value fields, users can create a full bowtie, showcasing how an aggregate value splits into two distinct sub-categories. </p>Bowtie Chart by MAQ Software is ideal for displaying sales metrics, such as the flow of channel category sales into subcategory sales. <p> </p><p> Key features: </p><ul> <li> Configurable branch color. </li><li> Configurable font-size, color, and decimal precision for data labels and summary labels. </li><li> Optional use in either half bowtie or full bowtie format. </li></ul> <p> For any feature requests or questions about this visual, please send an e-mail to our team at <a href='mailto:Support@MAQSoftware.com'>Support@MAQSoftware.com</a>. </p><a href='https://appsource.microsoft.com/en-us/product/power-bi-visuals/WA104380838?tab=Overview' target='_blank' class='btn btn-md btn-black-line '>See in AppSource</a>",
+      "category":  ""
+    }
+  }
+]
