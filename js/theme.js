@@ -1,6 +1,7 @@
-var pageSection;
-var visualTemplate = '<div class="item"> <div class="nf-col-padding"> <div class="item-box"> <div class="shop-item"> <div class="item-img"> <img alt="@name" src="@img"/> </div><div class="item-mask"> <div class="item-mask-detail"> <div class="item-caption text-center" style="color:white;"> <div> @description </div><a data-toggle="modal" data-target="#model@id" class="btn btn-line-xs btn-white-line"> <i class="fa"></i>Learn More </a> </div></div></div></div><div class="shop-item-info"> <a href="@url" target="_blank"> <h6 class="shop-item-name">@name</h6> </a> </div></div></div></div>';
-var modalTemplate = '<div class="modal fade product_view" id="model@id"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h3 class="modal-title pull-left">@title</h3> <a href="#" data-dismiss="modal" class="class pull-right"> <span class="glyphicon glyphicon-remove"></span> </a> </div><div class="modal-body"> <div class="row"> <div class="col-md-6 product_img"> <img alt="@name" title="@name" src="@img" class="img-responsive"> </div><div class="col-md-6 product_content"> @content<p> For any feature requests or questions about this visual, please send an e-mail to our team at <a href="mailto:Support@MAQSoftware.com">Support@MAQSoftware.com</a>. </p><a href="@url" target="_blank" class="btn btn-md btn-black-line ">See in AppSource</a> </div></div></div></div></div></div>';
+var pageSection,
+visualTemplate = '<div class="item"> <div class="nf-col-padding"> <div class="item-box"> <div class="shop-item"> <div class="item-img"> <img alt="@name" src="@img"/> </div><div class="item-mask"> <div class="item-mask-detail"> <div class="item-caption text-center" style="color:white;"> <div> @description </div><a data-toggle="modal" data-target="#model@id" class="btn btn-line-xs btn-white-line"> <i class="fa"></i>Learn More </a> </div></div></div></div><div class="shop-item-info"> <a href="@url" target="_blank"> <h6 class="shop-item-name">@name</h6> </a> </div></div></div></div>',
+modalTemplate = '<div class="modal fade product_view" id="model@id"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <h3 class="modal-title pull-left">@title</h3> <a href="#" data-dismiss="modal" class="class pull-right"> <span class="glyphicon glyphicon-remove"></span> </a> </div><div class="modal-body"> <div class="row"> <div class="col-md-6 product_img"> <img alt="@name" title="@name" src="@img" class="img-responsive"> </div><div class="col-md-6 product_content"> @content<p> For any feature requests or questions about this visual, please send an e-mail to our team at <a href="mailto:Support@MAQSoftware.com">Support@MAQSoftware.com</a>. </p><a href="@url" target="_blank" class="btn btn-md btn-black-line ">See in AppSource</a> </div></div></div></div></div></div>',
+viewAllVisualTemplate = '<div class="nf-item @category spacing"> <div class="item-box"> <img alt="@name" src="@img" class="item-container"> <div class="item-mask"> <div class="item-caption text-center" style="color:white;"> <div>@description</div><a data-toggle="modal" data-target="#model@id" class="btn btn-line-xs btn-white-line"><i class="fa"></i>Learn More</a> </div></div></div><h6 class="text-center pt-15"><a href="@url" target="_blank">@name</a></h6> </div>';
 
 Date.prototype.format = function () {
     "use strict";
@@ -34,9 +35,6 @@ $(document).ready(function () {
     scroll();
     pluginElement();
     sliderHero();
-    //if (!($(".power-bi-carousel").length)) {
-    //    PowerBIVisualsConfig();
-    //}
     SliderConfig();
     containerGridMasonry();
     scrollCallbackEle();
@@ -288,16 +286,19 @@ function PowerBIVisualsConfig() {
 };
 
 function RenderPowerBIVisuals(oVisualConfig) {
-    var totalVisuals = oVisualConfig.length;
-    var visualContainer = $("#power-bi-carousel");
-    var modalContainer = $("#modelChart");
-    var visualSliderHtml = '<div class="owl-carousel power-bi-carousel nf-carousel-theme o-flow-hidden" id="PowerBISliderVisual"></div>';
-    var visualContentHtml = "";
-    var modalContentHtml = "";
+    var totalVisuals = oVisualConfig.length,
+    visualContainer = $("#power-bi-carousel"),
+    modalContainer = $("#modelChart"),
+    viewAllContainer = $("#viewAllVisuals"),
+    visualSliderHtml = '<div class="owl-carousel power-bi-carousel nf-carousel-theme o-flow-hidden" id="PowerBISliderVisual"></div>',
+    visualContentHtml = "",
+    modalContentHtml = "",
+    viewAllContentHtml = "";
     visualContainer.append(visualSliderHtml);
+    var visualContentContainer = $("#PowerBISliderVisual");
     $.each(oVisualConfig, function (index, item) {
 
-        $.each(Object.keys(this), function (index1, item1) {
+        $.each(Object.keys(this), function (visualIndex, visualItem) {
 
             visualContentHtml += visualTemplate.replace(/@name/g, oVisualConfig[index][this].name)
                 .replace(/@img/g, oVisualConfig[index][this].img)
@@ -310,12 +311,17 @@ function RenderPowerBIVisuals(oVisualConfig) {
                 .replace(/@id/g, oVisualConfig[index][this].id)
                 .replace(/@url/g, oVisualConfig[index][this].url)
                 .replace(/@content/g, oVisualConfig[index][this].content);
+            viewAllContentHtml += viewAllVisualTemplate.replace(/@name/g, oVisualConfig[index][this].name)
+                .replace(/@img/g, oVisualConfig[index][this].img)
+                .replace(/@id/g, oVisualConfig[index][this].id)
+                .replace(/@url/g, oVisualConfig[index][this].url)
+                .replace(/@category/g, oVisualConfig[index][this].category)
+                .replace(/@description/g, oVisualConfig[index][this].description);
         })
     });
-    var visualContentContainer = $("#PowerBISliderVisual");
     visualContentContainer.append(visualContentHtml);
     modalContainer.append(modalContentHtml);
-    
+    viewAllContainer.append(viewAllContentHtml);
 }
 
 function sliderAll(oSliderConfig) {
@@ -522,45 +528,48 @@ function sliderAll(oSliderConfig) {
     });
     
     if (typeof oSliderConfig !== 'undefined' && oSliderConfig !== 'null' && oSliderConfig !== "" && oSliderConfig !== 'false') {
-        $('.power-bi-carousel').owlCarousel({
-            autoplay: (oSliderConfig.autoplay !== typeof undefined ? oSliderConfig.autoplay : 2500),
-            slideSpeed: (oSliderConfig.slideSpeed !== typeof undefined ? oSliderConfig.slideSpeed : 2500),
-            autoplaySpeed: (oSliderConfig.autoplaySpeed !== typeof undefined ? oSliderConfig.autoplaySpeed : 2500),
-            autoplayHoverPause: (oSliderConfig.autoplayHoverPause !== typeof undefined ? oSliderConfig.autoplayHoverPause : true),
-            navSpeed: (oSliderConfig.navSpeed !== typeof undefined ? oSliderConfig.navSpeed : 2500),
-            paginationSpeed: (oSliderConfig.paginationSpeed !== typeof undefined ? oSliderConfig.paginationSpeed : 2500),
-            stopOnHover: true,
-            items: 4,
-            rewind: true,
-            loop: true,
-            itemsDesktop: [1170, 3],
-            itemsDesktopSmall: [1024, 2],
-            itemsTabletSmall: [768, 1],
-            itemsMobile: [480, 1],
-            pagination: false,  // Hide pagination buttons
-            navigation: true,  // Show next and prev buttons
-            nav: true,  // Show next and prev buttons
-            navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-            navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-            dots: false,
-            responsive: {
-                0: {
-                    items: 1
+        if (($(".power-bi-carousel").length)) {
+            $('.power-bi-carousel').owlCarousel({
+                autoplay: (oSliderConfig.autoplay !== typeof undefined ? oSliderConfig.autoplay : 2500),
+                slideSpeed: (oSliderConfig.slideSpeed !== typeof undefined ? oSliderConfig.slideSpeed : 2500),
+                autoplaySpeed: (oSliderConfig.autoplaySpeed !== typeof undefined ? oSliderConfig.autoplaySpeed : 2500),
+                autoplayHoverPause: (oSliderConfig.autoplayHoverPause !== typeof undefined ? oSliderConfig.autoplayHoverPause : true),
+                navSpeed: (oSliderConfig.navSpeed !== typeof undefined ? oSliderConfig.navSpeed : 2500),
+                paginationSpeed: (oSliderConfig.paginationSpeed !== typeof undefined ? oSliderConfig.paginationSpeed : 2500),
+                stopOnHover: true,
+                items: 4,
+                rewind: true,
+                loop: true,
+                itemsDesktop: [1170, 3],
+                itemsDesktopSmall: [1024, 2],
+                itemsTabletSmall: [768, 1],
+                itemsMobile: [480, 1],
+                pagination: false,  // Hide pagination buttons
+                navigation: true,  // Show next and prev buttons
+                nav: true,  // Show next and prev buttons
+                navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+                navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    }
+                    ,
+                    786: {
+                        items: 2
+                    }
+                    ,
+                    1042: {
+                        items: 3
+                    }
+                    ,
+                    1200: {
+                        items: 4
+                    }
                 }
-                ,
-                786: {
-                    items: 2
-                }
-                ,
-                1042: {
-                    items: 3
-                }
-                ,
-                1200: {
-                    items: 4
-                }
-            }
-        });
+            });
+        }
+        
     }
 
     // Item-3 Carousel
