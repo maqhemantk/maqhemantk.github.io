@@ -167,6 +167,6 @@ function shareOverrideOGMeta() {
 	});
 }
 
-$( "#u_0_2" ).on( "click", function() {
+$("#u_0_2" ).on( "click", function() {
   shareOverrideOGMeta();
 });
