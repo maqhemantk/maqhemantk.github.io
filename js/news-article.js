@@ -166,6 +166,7 @@ function shareOverrideOGMeta() {
 	    // Action after response
 	});
 }
-$( "#u_0_2").click(function() {
+
+$( "#u_0_2" ).on( "click", function() {
   shareOverrideOGMeta();
 });
