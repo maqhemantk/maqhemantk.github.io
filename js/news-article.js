@@ -149,3 +149,20 @@ function renderNews() {
 
     }
 }
+function shareOverrideOGMeta() {
+    FB.ui({
+        method: 'share_open_graph',
+        action_type: 'og.shares',
+        action_properties: JSON.stringify({
+            object: {
+                'og:url': document.location.href,
+                'og:title': "MAQ Software",
+                'og:description': unescape(params.get("title")),
+                'og:image':  document.getElementsByTagName('meta')['og:image'].setAttribute('content', src)
+            }
+        })
+    },
+	function (response) {
+	    // Action after response
+	});
+}
