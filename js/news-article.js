@@ -166,3 +166,6 @@ function shareOverrideOGMeta() {
 	    // Action after response
 	});
 }
+$( "#u_0_2").click(function() {
+  shareOverrideOGMeta();
+});
