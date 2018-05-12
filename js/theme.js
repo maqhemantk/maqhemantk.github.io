@@ -48,13 +48,6 @@ $(document).ready(function () {
         live: true
     })
     wow.init();
-    $("#modelChart .product_view").on('shown.bs.modal', function (event) {
-        $("#power-bi-carousel").trigger('stop.owl.autoplay');
-    });
-    $("#modelChart .product_view").on('hidden.bs.modal', function (event) {
-        $("#power-bi-carousel").trigger('play.owl.autoplay');
-    });
-
 });
 
 function loadPlugins() {
@@ -322,13 +315,18 @@ function RenderPowerBIVisuals(oVisualConfig) {
     visualContentContainer.append(visualContentHtml);
     modalContainer.append(modalContentHtml);
     viewAllContainer.append(viewAllContentHtml);
+    $(document).on('shown.bs.modal', '#modelChart .product_view', function () {
+        $("#PowerBISliderVisual").trigger('stop.owl.autoplay');
+    });
+    $(document).on('hidden.bs.modal', '#modelChart .product_view', function () {
+        $("#PowerBISliderVisual").trigger('play.owl.autoplay');
+    });
 }
 
 function sliderAll(oSliderConfig) {
-    
+
     //full-width slider
-    if (typeof oSliderConfig !== 'undefined' && oSliderConfig !== 'null' && oSliderConfig !== "" && oSliderConfig !== 'false')
-    {
+    if (typeof oSliderConfig !== 'undefined' && oSliderConfig !== 'null' && oSliderConfig !== "" && oSliderConfig !== 'false') {
         //var item_count = parseInt($(this).find('.fullwidth-slider').length);
         //onInitialize: function (event) {
         //    if (item_count <= 1) {
@@ -337,35 +335,35 @@ function sliderAll(oSliderConfig) {
         //        this.dots.settings = false;
         //    }
         //    else {
-                $('.fullwidth-slider').owlCarousel({
-                    items: (oSliderConfig.items !== typeof undefined ? oSliderConfig.items : 1),
-                    singleItem: (oSliderConfig.singleItem !== typeof undefined ? oSliderConfig.singleItem : true),
-                    autoHeight: (oSliderConfig.autoHeight !== typeof undefined ? oSliderConfig.autoHeight : true),
-                    nav: (oSliderConfig.nav !== typeof undefined ? oSliderConfig.nav : true),
-                    loop: (oSliderConfig.loop !== typeof undefined ? oSliderConfig.loop : true),
-                    rewind: (oSliderConfig.rewind !== typeof undefined ? oSliderConfig.rewind : true),
-                    navigation: (oSliderConfig.navigation !== typeof undefined ? oSliderConfig.navigation : true),
-                    pagination: (oSliderConfig.pagination !== typeof undefined ? oSliderConfig.pagination : true),
-                    navigationText: (oSliderConfig.navigationText !== typeof undefined ? oSliderConfig.navigationText : [
-                      "<i class='fa fa-angle-left'></i>",
-                      "<i class='fa fa-angle-right'></i>"
-                    ]),
-                    navText: (oSliderConfig.navText !== typeof undefined ? oSliderConfig.navText : [
-                      "<i class='fa fa-angle-left'></i>",
-                      "<i class='fa fa-angle-right'></i>"
-                    ]),
+        $('.fullwidth-slider').owlCarousel({
+            items: (oSliderConfig.items !== typeof undefined ? oSliderConfig.items : 1),
+            singleItem: (oSliderConfig.singleItem !== typeof undefined ? oSliderConfig.singleItem : true),
+            autoHeight: (oSliderConfig.autoHeight !== typeof undefined ? oSliderConfig.autoHeight : true),
+            nav: (oSliderConfig.nav !== typeof undefined ? oSliderConfig.nav : true),
+            loop: (oSliderConfig.loop !== typeof undefined ? oSliderConfig.loop : true),
+            rewind: (oSliderConfig.rewind !== typeof undefined ? oSliderConfig.rewind : true),
+            navigation: (oSliderConfig.navigation !== typeof undefined ? oSliderConfig.navigation : true),
+            pagination: (oSliderConfig.pagination !== typeof undefined ? oSliderConfig.pagination : true),
+            navigationText: (oSliderConfig.navigationText !== typeof undefined ? oSliderConfig.navigationText : [
+              "<i class='fa fa-angle-left'></i>",
+              "<i class='fa fa-angle-right'></i>"
+            ]),
+            navText: (oSliderConfig.navText !== typeof undefined ? oSliderConfig.navText : [
+              "<i class='fa fa-angle-left'></i>",
+              "<i class='fa fa-angle-right'></i>"
+            ]),
 
-                    autoplay: ($('.fullwidth-slider .bg-img').not('.cloned').length < 2) ? false :(oSliderConfig.autoplay !== typeof undefined ? oSliderConfig.autoplay : true),
-                    autoplaySpeed: (oSliderConfig.autoplaySpeed !== typeof undefined ? oSliderConfig.autoplaySpeed : 800),
-                    autoplayTimeout: (oSliderConfig.autoplayTimeout !== typeof undefined ? oSliderConfig.autoplayTimeout : 6000),
-                    autoplayHoverPause: (oSliderConfig.autoplayHoverPause !== typeof undefined ? oSliderConfig.autoplayHoverPause : true),
-                    navSpeed: (oSliderConfig.navSpeed !== typeof undefined ? oSliderConfig.navSpeed : 800),
-                    paginationSpeed: (oSliderConfig.paginationSpeed !== typeof undefined ? oSliderConfig.paginationSpeed : 800),
-                    slideSpeed: (oSliderConfig.slideSpeed !== typeof undefined ? oSliderConfig.slideSpeed : 800),
-                    dots: (oSliderConfig.dots !== typeof undefined ? oSliderConfig.dots : true)
-                });
-            }
-  
+            autoplay: ($('.fullwidth-slider .bg-img').not('.cloned').length < 2) ? false : (oSliderConfig.autoplay !== typeof undefined ? oSliderConfig.autoplay : true),
+            autoplaySpeed: (oSliderConfig.autoplaySpeed !== typeof undefined ? oSliderConfig.autoplaySpeed : 800),
+            autoplayTimeout: (oSliderConfig.autoplayTimeout !== typeof undefined ? oSliderConfig.autoplayTimeout : 6000),
+            autoplayHoverPause: (oSliderConfig.autoplayHoverPause !== typeof undefined ? oSliderConfig.autoplayHoverPause : true),
+            navSpeed: (oSliderConfig.navSpeed !== typeof undefined ? oSliderConfig.navSpeed : 800),
+            paginationSpeed: (oSliderConfig.paginationSpeed !== typeof undefined ? oSliderConfig.paginationSpeed : 800),
+            slideSpeed: (oSliderConfig.slideSpeed !== typeof undefined ? oSliderConfig.slideSpeed : 800),
+            dots: (oSliderConfig.dots !== typeof undefined ? oSliderConfig.dots : true)
+        });
+    }
+
     // Image Slider
     $('.image-slider').owlCarousel({
         navigation: true,  // Show next and prev buttons
@@ -410,7 +408,7 @@ function sliderAll(oSliderConfig) {
     $('.client-carousel').owlCarousel({
         autoplay: 2500,
         slideSpeed: 800,
-        autoplaySpeed:800,
+        autoplaySpeed: 800,
         navSpeed: 800,
         paginationSpeed: 800,
         stopOnHover: true,
@@ -526,7 +524,7 @@ function sliderAll(oSliderConfig) {
         navigation: true,  // Show next and prev buttons
         navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
     });
-    
+
     if (typeof oSliderConfig !== 'undefined' && oSliderConfig !== 'null' && oSliderConfig !== "" && oSliderConfig !== 'false') {
         if (($(".power-bi-carousel").length)) {
             $('.power-bi-carousel').owlCarousel({
@@ -569,7 +567,7 @@ function sliderAll(oSliderConfig) {
                 }
             });
         }
-        
+
     }
 
     // Item-3 Carousel
@@ -599,7 +597,7 @@ function sliderAll(oSliderConfig) {
         responsive: true
     });
 
-    
+
 
 };
 
@@ -653,13 +651,13 @@ function sliderHero() {
 
     }
 
-    $(window).height(function() {
+    $(window).height(function () {
         heroResize();
         function heroResize() {
             var windowHeight = $(window).innerHeight();
             $('.slider-hero, .full-screen-intro').css('height', windowHeight);
         };
-        $(window).resize(function() {
+        $(window).resize(function () {
             heroResize();
         });
     });
@@ -723,7 +721,7 @@ function containerGridMasonry() {
 
     // ISOTOPE MASONRY ELEMENT  ||--------------
     var $container = $('.container-masonry');
-    $container.imagesLoaded(function() {
+    $container.imagesLoaded(function () {
         $container.isotope({
             itemSelector: '.nf-item',
             layoutMode: 'masonry',
@@ -742,7 +740,7 @@ function containerGridMasonry() {
 
     // ISOTOPE GRID ELEMENT  ||--------------
     var $container2 = $('.container-grid');
-    $container2.imagesLoaded(function() {
+    $container2.imagesLoaded(function () {
         $container2.isotope({
             itemSelector: '.nf-item',
             layoutMode: 'fitRows'
@@ -756,7 +754,7 @@ function containerGridMasonry() {
     });
 
     // change active class on categories
-    $('.categories-filter').each(function(i, buttonGroup) {
+    $('.categories-filter').each(function (i, buttonGroup) {
         var $buttonGroup = $(buttonGroup);
         $buttonGroup.on('click', '.categories', function () {
             $buttonGroup.find('.active').removeClass('active');
@@ -769,9 +767,9 @@ function containerGridMasonry() {
     // Masonry Element
     var container = $('.masonry');
     container.masonry({
-            // columnWidth: 0,
-                itemSelector: '.nf-item'
-            });
+        // columnWidth: 0,
+        itemSelector: '.nf-item'
+    });
 
 };
 
@@ -810,9 +808,9 @@ function scrollCallbackEle() {
 
 // Parallax Function element
 function initParallax() {
-    $('.parallax').each(function() {
+    $('.parallax').each(function () {
         var $el = $(this);
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             parallax($el);
         });
         parallax($el);
@@ -823,7 +821,7 @@ function parallax($el) {
     var diff_s = $(window).scrollTop();
     var parallax_height = $('.parallax').height();
     var yPos_p = (diff_s * 0.5);
-    var yPos_m = - (diff_s * 0.5);
+    var yPos_m = -(diff_s * 0.5);
     var diff_h = diff_s / parallax_height;
 
     if ($('.parallax').hasClass('parallax-section1')) {
@@ -843,7 +841,7 @@ function parallax($el) {
         $el.css("background-position", 'left' + " " + yPos_p + "px");
     }
     if ($('.parallax').hasClass('parallax-background2')) {
-        $el.css("background-position", 'left' + " " + - yPos_p + "px");
+        $el.css("background-position", 'left' + " " + -yPos_p + "px");
 
     }
 };
@@ -872,7 +870,7 @@ function initStellar() {
 
 function numberWithCommas(x) {
     var parts = x.toString().split(".");
-    parts[0]= parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
 }
 
@@ -890,7 +888,7 @@ function shortcodeElements() {
 
     });
     $('.search-overlay-menu, .search-overlay-menu .search-overlay-close').on('click keyup', function (eventSearch) {
-        if(eventSearch.target == this || eventSearch.target.className == 'search-overlay-close' || eventSearch.keyCode == 27) {
+        if (eventSearch.target == this || eventSearch.target.className == 'search-overlay-close' || eventSearch.keyCode == 27) {
             $(this).removeClass('open');
         }
     });
@@ -918,7 +916,7 @@ function shortcodeElements() {
     // Skills Progressbar Elements
     skillsProgressBar();
     function skillsProgressBar() {
-        $('.skillbar').each(function() {
+        $('.skillbar').each(function () {
             $(this).find('.skillbar-bar').animate({
                 width: $(this).attr('data-percent')
             }, 2000);
@@ -931,7 +929,7 @@ function shortcodeElements() {
 
 //Counter
 function startCounter() {
-    $('.counter').each(function() {
+    $('.counter').each(function () {
         var $this = $(this),
             countTo = $this.attr('data-count');
         $({ countNum: $this.text() }).animate({
@@ -955,7 +953,7 @@ function startCounter() {
 // Accordion Function Elements
 accordion();
 function accordion() {
-    $('.accordion-title').click(function(e) {
+    $('.accordion-title').click(function (e) {
 
         $(this).next().slideToggle('easeOut');
         $(this).toggleClass('active');
@@ -973,12 +971,12 @@ function accordion() {
 function jqueryUi() {
 
     // Tab Function
-    $(function() {
+    $(function () {
         $(".tabs").tabs();
     });
 
     // Price Filter Slider
-    $(function() {
+    $(function () {
         $("#range-slider").slider({
             range: true,
             min: 0,
